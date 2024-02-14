@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #dbeafe;
+  height: 100%;
+  padding: 1%;
+}
