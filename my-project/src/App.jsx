@@ -13,9 +13,9 @@ const App = () => {
     {/* <Home/> */}
     {/* <Otp/> */}
     {/* <Hire/> */}
-    {/* <Login/> */}
+    <Login/>
     {/* <PostHistory/> */}
-    <AppliedJobs/>
+    {/* <AppliedJobs/> */}
     </div>
   )
 }

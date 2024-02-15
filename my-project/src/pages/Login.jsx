@@ -4,29 +4,20 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 
-
 const Login = () => {
-const [authData , setAuthData]= useState({
-    username:'',
-    password:''
-})
-const [err,setErr]=useState({
-    status:false,
-    msg :""
-})
+
+const [authData , setAuthData]= useState({ username:'',  password:''  })
+const [err,setErr]=useState({   status:false, msg :""   })
+
 
 const handleChange=(e)=>{
     const {name,value}=e.target
     setAuthData({...authData,[name]:value})
 }
 const {username , password}=authData
-
-const handleSubmit=(e)=>{
-    e.preventDefault()
-    console.log(authData)
-}
     return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
+   
     <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-md"> 
    {err.status && <><h1 className='bg-red-600 text-white text-center p-5 rounded-md'>{err.msg}</h1></>}
         <div>
