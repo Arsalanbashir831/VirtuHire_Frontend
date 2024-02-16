@@ -16,9 +16,9 @@ const JobPost = ({ jobTitle, companyName, location, postedDate, rolesAndResponsi
         <h4 className="text-md font-semibold">Job Title: <span className="font-normal">{jobTitle}</span></h4>
         <p className="text-sm text-gray-700 mt-1">Roles & Responsibilities: <span className="font-normal">{rolesAndResponsibilities}</span></p>
       </div>
-      <div className="text-sm text-gray-600">
+      {/* <div className="text-sm text-gray-600">
         {applicantCount} Applicants
-      </div>
+      </div> */}
 
       <div className=" flex justify-end items-center gap-4">
       {hasAccess && <button className="btn btn-warning text-white ">Edit</button>}
