@@ -26,7 +26,7 @@ const handleSubmit = async (e) => {
     navigation('/')
     
   } catch (error) {
-    setErr({status:true,msg:"Invalid Credentials"})
+    setErr({status:true,msg:"Invalid Credentialss"})
     toast.error('Invalid Credentials')
   }
 };
