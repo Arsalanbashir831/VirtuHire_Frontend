@@ -4,13 +4,12 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 import axios from 'axios';
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
 
 const [authData , setAuthData]= useState({ username:'',  password:''  })
 const [err,setErr]=useState({   status:false, msg :""   })
-const [isAuth,setIsAuth]=useState(false)
-
+const navigataion = useNavigate()
 const handleChange=(e)=>{
     const {name,value}=e.target
     setAuthData({...authData,[name]:value})
@@ -21,7 +20,7 @@ const handleSubmit = async (e) => {
     const res = await axios.post('http://127.0.0.1:8000/api/v1/login', authData);
     console.log(res.data);
     localStorage.setItem('token', res.data.token);
-    setIsAuth(true)
+    navigataion('/')
     
   } catch (error) {
     setErr({status:true,msg:"Invalid Credentials"})
@@ -33,7 +32,7 @@ const {username , password}=authData
     return (
       
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
-   {isAuth && <Navigate to="/" />}
+
     <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-md"> 
    {err.status && <><h1 className='bg-red-600 text-white text-center p-5 rounded-md'>{err.msg}</h1></>}
         <div>
