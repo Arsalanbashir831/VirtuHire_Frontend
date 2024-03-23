@@ -38,9 +38,7 @@ const handleSubmit = async (e) => {
       console.log(data);
       const response = await axios.post('http://127.0.0.1:8000/api/v1/signup', data).then((res) => {
         navigation('/otp')
-        console.log(res.data);
       }).catch((err) => setErr(err));
-      console.log(response);
       
     } catch (error) {
       console.error(error);

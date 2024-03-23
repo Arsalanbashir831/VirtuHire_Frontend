@@ -22,7 +22,6 @@ const handleSubmit = async (e) => {
     const res = await axios.post('http://127.0.0.1:8000/api/v1/login', authData);
     console.log(res.data);
     localStorage.setItem('token', res.data.token);
-    setIsAuth(true)
     toast.success('Logged in Successfully')
     navigation('/')
     
