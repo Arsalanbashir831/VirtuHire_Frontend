@@ -4,15 +4,14 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 import axios from 'axios';
-import { Navigate,useNavigate } from "react-router-dom";
+import { useNavigate,useNavigate } from "react-router-dom";
 import { toast,ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
 const navigation = useNavigate()
 const [authData , setAuthData]= useState({ username:'',  password:''  })
 const [err,setErr]=useState({   status:false, msg :""   })
-const [isAuth,setIsAuth]=useState(false)
-
+const navigataion = useNavigate()
 const handleChange=(e)=>{
     const {name,value}=e.target
     setAuthData({...authData,[name]:value})

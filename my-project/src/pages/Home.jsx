@@ -6,8 +6,10 @@ import Search from '../components/Common/Search'
 import JobPost from '../components/Common/JobPost'
 import ApplyModal from '../components/Modals/ApplyModal'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigation = useNavigate()
   const [search , setSearch] = useState("")
   const [jobs , setJobs] = useState(null)
   const handleSearchWords = (e) => {
@@ -31,7 +33,7 @@ useEffect(() => {
       setTimeout(() => {
         setJobs(res.data);
       }, 2000);
-    }).catch((err) => console.error(err));
+    }).catch((err) => navigation('/login'));
   }
   fetchJobs()
 }, [])

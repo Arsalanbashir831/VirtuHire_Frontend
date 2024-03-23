@@ -4,11 +4,10 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
-const [register , isRegister]=useState(false)
 const [authData , setAuthData]= useState({
     first_name:'',
     last_name:'',   
@@ -21,6 +20,7 @@ const [err,setErr]=useState({
     status:false,
     msg :""
 })
+const navigation = useNavigate()
 
 const handleChange=(e)=>{
     const {name,value}=e.target
@@ -37,7 +37,7 @@ const handleSubmit = async (e) => {
       const { confirmpass, ...data } = authData; 
       console.log(data);
       const response = await axios.post('http://127.0.0.1:8000/api/v1/signup', data).then((res) => {
-        isRegister(true)
+        navigation('/otp')
         console.log(res.data);
       }).catch((err) => setErr(err));
       console.log(response);
@@ -52,7 +52,6 @@ const handleSubmit = async (e) => {
     return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
     <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-md"> 
-    {register && <Navigate to="/otp" state={{ email: email }} />}
    {err.status && <><h1 className='bg-red-600 text-white text-center p-5 rounded-md'>{err.msg}</h1></>}
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
