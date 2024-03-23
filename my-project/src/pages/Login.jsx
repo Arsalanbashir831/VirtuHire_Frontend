@@ -4,7 +4,7 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 import axios from 'axios';
-import { useNavigate,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast,ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
