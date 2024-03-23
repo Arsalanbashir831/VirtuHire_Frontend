@@ -4,9 +4,11 @@ import Labels from '../components/Forms/Labels';
 import Checkbox from '../components/Forms/Checkbox';
 import PlainButton from '../components/Buttons/PlainButton';
 import axios from 'axios';
-import { Navigate } from "react-router-dom";
+import { Navigate,useNavigate } from "react-router-dom";
+import { toast,ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
-
+const navigation = useNavigate()
 const [authData , setAuthData]= useState({ username:'',  password:''  })
 const [err,setErr]=useState({   status:false, msg :""   })
 const [isAuth,setIsAuth]=useState(false)
@@ -22,9 +24,12 @@ const handleSubmit = async (e) => {
     console.log(res.data);
     localStorage.setItem('token', res.data.token);
     setIsAuth(true)
+    toast.success('Logged in Successfully')
+    navigation('/')
     
   } catch (error) {
     setErr({status:true,msg:"Invalid Credentials"})
+    toast.error('Invalid Credentials')
   }
 };
 
@@ -32,8 +37,9 @@ const {username , password}=authData
 
     return (
       
+    <>
+<ToastContainer/>
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
-   {isAuth && <Navigate to="/" />}
     <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-md"> 
    {err.status && <><h1 className='bg-red-600 text-white text-center p-5 rounded-md'>{err.msg}</h1></>}
         <div>
@@ -74,10 +80,11 @@ const {username , password}=authData
           </div>
         </div>
         <div>
-            <h5 className='text-gray-500 text-sm text-center'>Dont Have Account ? <span className='text-indigo-500 font-bold cursor-pointer'>Signup</span></h5>
+            <h5 className='text-gray-500 text-sm text-center'>Dont Have Account ? <span onClick={()=>navigation('/signup')}  className='text-indigo-500 font-bold cursor-pointer'>Signup</span></h5>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

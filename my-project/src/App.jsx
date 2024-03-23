@@ -19,6 +19,7 @@ const App = () => {
       <Route path="/posthistory" element={<PostHistory />} />
       <Route path="/appliedjobs" element={<AppliedJobs />} />
        </Routes>
+     
     </>
   
   )
