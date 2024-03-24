@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoMenu } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
@@ -23,21 +25,21 @@ const Navbar = () => {
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu p-4 w-72 min-h-full bg-base-200 text-base-content justify-center">
   <li className="mb-2">
-    <a className="text-lg font-semibold text-blue-500 hover:text-blue-700 transition duration-300">Home</a>
+    <Link to='/' className="text-lg font-semibold text-blue-500 hover:text-blue-700 transition duration-300">Home</Link>
   </li>
 
   <li className="mb-2 dropdown dropdown-right">
 
   <div tabIndex={0} role="button" className="text-lg font-semibold text-blue-500 hover:text-blue-700 transition duration-300 ">Hire</div>
   <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-    <li><a>Create Job Post</a></li>
-    <li><a>View Your Job Post</a></li>
+    <li> <Link to='/jobPosting'>Create Your Job Post</Link></li>
+    <li><Link to='/posthistory'>View Your Job Post</Link></li>
   </ul>
 
   </li>
 
   <li className="mb-2">
-    <a className="text-lg font-semibold text-blue-500 hover:text-blue-700 transition duration-300">Applied Jobs</a>
+    <Link to='/appliedjobs' className="text-lg font-semibold text-blue-500 hover:text-blue-700 transition duration-300">Applied Jobs</Link>
   </li>
 
   <li className="mb-2">

@@ -42,24 +42,23 @@ useEffect(() => {
    <>
     <Navbar />
     <Search submission={searchSubmit} handleSearch={handleSearchWords} searchValue={search}  placeholder="Search for jobs" />
-    {/* <ApplyModal 
-    jobtitle={"Web Developer"}
-    desc={"A web developer is responsible fo A web developer is responsible for designing and implementing innovative web solutions, translating client needs into functional and visually appealing websites. Their roles encompass front-end and back-endr designing and implementing innovative web solutions, translating client needs into functional and visually appealing websites. Their roles encompass front-end and back-end A web developer is responsible for designing and implementing innovative web solutions, translating client needs into functional and visually appealing websites. Their roles encompass front-end and back-end A web developer is responsible for designing and implementing innovative web solutions, translating client needs into functional and visually appealing websites. Their roles encompass front-end and back-end"}
-    skills={"React,Node,Express"}
-    /> */}
+  
 
     {jobs === null ?
       <><SkeletonLoading/> <SkeletonLoading/></>
       : (
   jobs.map((job) => (
     <JobPost
+    
       key={job.id}
       hasAccess={false}
       companyName={job.company}
       jobTitle={job.job_title}
       rolesAndResponsibilities={job.description}
-      location={job.location}
+      location={job.address}
       postedDate={job.start_date}
+      jobDocument={job.job_document}
+      jobUrl={job.url}
     />
   ))
 )}

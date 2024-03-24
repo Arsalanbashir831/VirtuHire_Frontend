@@ -6,6 +6,8 @@ import Otp from './pages/Otp'
 import PostHistory from './pages/PostHistory'
 import AppliedJobs from './pages/AppliedJobs'
 import { Routes,Route } from 'react-router-dom'
+import JobPosting from './pages/JobPosting'
+import CandidateRecommendation from './pages/CandidateRecommendation'
 
 
 
@@ -19,6 +21,8 @@ const App = () => {
       <Route path="/otp" element={<Otp />} />
       <Route path="/posthistory" element={<PostHistory />} />
       <Route path="/appliedjobs" element={<AppliedJobs />} />
+      <Route path="/jobPosting" element={<JobPosting />} />
+      <Route path="/recommendation"  element={<CandidateRecommendation />} />
        </Routes>
 
      

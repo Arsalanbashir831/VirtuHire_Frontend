@@ -18,7 +18,7 @@ const AppliedJobs = () => {
     { id: 3, name: 'Brice Swyre', job: 'Tax Accountant', color: 'Red' },
     { id: 3, name: 'Brice Swyre', job: 'Tax Accountant', color: 'Red' },
     { id: 3, name: 'Brice Swyre', job: 'Tax Accountant', color: 'Red' },
-    // ... Add more data
+ 
   ];
 
   const handlePageChange = ({ selected }) => {
